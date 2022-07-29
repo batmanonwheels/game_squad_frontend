@@ -6,8 +6,9 @@ function SignUp({ setUser }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   function handleSubmit(e) {
+    console.log(e)
     e.preventDefault();
-    fetch("http://localhost:3000/signup", {
+    fetch("/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,9 +21,6 @@ function SignUp({ setUser }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
-      }
-      else {
-        console.log(r)
       }
     });
   }
