@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigate } from 'react-router-dom'
 
 function SignUp({ setUser }) {
   const [username, setUsername] = useState("");
