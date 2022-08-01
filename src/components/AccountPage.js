@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function AccountPage({ user }){
+function AccountPage({user}){
     console.log(user)
     return (
-        <h1>Hi</h1>
+        <>
+        <h1>Welcome to your account, {user.username.toUpperCase()}!</h1>
+        <h2>View your reviews here!</h2>
+        </>
     )
 }
 

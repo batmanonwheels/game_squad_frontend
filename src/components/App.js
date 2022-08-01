@@ -24,23 +24,22 @@ function App() {
       <main>
         {user ? (
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <Home user={user}/>
             </Route>
-            <Route path="/myaccount">
-              <AccountPage user={user} />
+            <Route exact path="/myaccount">
+              <AccountPage user={user}/>
             </Route>
           </Switch>
         ) : (
           <Switch>
-            <Route path="/signup">
+            <Route exact path="/signup">
               <SignUp setUser={setUser} />
             </Route>
-            <Route path="/login">
+            <Route exact path="/login">
               <Login setUser={setUser}  />
             </Route>
-
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
           </Switch>
