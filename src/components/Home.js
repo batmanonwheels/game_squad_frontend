@@ -1,4 +1,5 @@
 function Home({ user }) {
+  console.log(user)
   if (user) {
     return <h1>Welcome, {user.username}!</h1>;
   } else {

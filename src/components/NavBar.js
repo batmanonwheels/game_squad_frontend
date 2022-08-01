@@ -17,7 +17,10 @@ function NavBar({ user, setUser }) {
       </div>
       <div>
         {user ? (
+          <>
+          <Link to="/myaccount">My Account</Link>
           <button onClick={handleLogoutClick}>Logout</button>
+          </>
         ) : (
           <>
             <Link to="/signup">Signup</Link>
