@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
@@ -11,7 +11,11 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-    <header>
+    <header className='header'>
+      <div>
+        <Link to='/'>Home</Link>
+        <Link to='/games'>Games</Link>
+      </div>
       <div>
         {user ? (
           <>
@@ -21,8 +25,8 @@ function NavBar({ user, setUser }) {
           </>
         ) : (
           <>
-            <Link to="/signup">Signup</Link>
-            <Link to="/login">Login</Link>
+            <Link to='/signup'>Signup</Link>
+            <Link to='/login'>Login</Link>
           </>
         )}
       </div>

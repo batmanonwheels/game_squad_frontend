@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Switch, Route, Navigate } from "react-router-dom";
-import SignUp from "./SignUp";
-import Login from "./Login";
-import NavBar from "./NavBar";
-import Home from "./Home";
-import AccountPage from "./AccountPage";
+import React, { useEffect, useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import SignUp from './SignUp';
+import Login from './Login';
+import NavBar from './NavBar';
+import Home from './Home';
+import GameList from './GameList';
+import '../assets/css/App.css';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -22,7 +23,7 @@ function App() {
     <>
       <NavBar user={user} setUser={setUser} />
       <main>
-        {user ? (
+        {/* {user ? (
           <Switch>
             <Route exact path="/">
               <Home user={user}/>
@@ -31,19 +32,22 @@ function App() {
               <AccountPage user={user}/>
             </Route>
           </Switch>
-        ) : (
-          <Switch>
-            <Route exact path="/signup">
-              <SignUp setUser={setUser} />
-            </Route>
-            <Route exact path="/login">
-              <Login setUser={setUser}  />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
-          </Switch>
-        )}
+        ) : ( */}
+        <Switch>
+          <Route path='/games'>
+            <GameList />
+          </Route>
+          <Route path='/signup'>
+            <SignUp setUser={setUser} />
+          </Route>
+          <Route path='/login'>
+            <Login setUser={setUser} />
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
+        </Switch>
+        {/* )} */}
       </main>
     </>
   );
