@@ -5,6 +5,8 @@ import Login from './Login';
 import NavBar from './NavBar';
 import Home from './Home';
 import GameList from './GameList';
+import ReviewList from './ReviewList';
+import AccountPage from './AccountPage';
 import '../assets/css/App.css';
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
 
   useEffect(() => {
     // auto-login
-    fetch("/myaccount").then((r) => {
+    fetch('/myaccount').then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
@@ -25,15 +27,18 @@ function App() {
       <main>
         {/* {user ? (
           <Switch>
-            <Route exact path="/">
-              <Home user={user}/>
+            <Route exact path='/'>
+              <Home user={user} />
             </Route>
-            <Route exact path="/myaccount">
-              <AccountPage user={user}/>
+            <Route exact path='/myaccount'>
+              <AccountPage user={user} />
             </Route>
           </Switch>
         ) : ( */}
         <Switch>
+          <Route path='/review'>
+            <ReviewList />
+          </Route>
           <Route path='/games'>
             <GameList />
           </Route>
