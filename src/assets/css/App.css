@@ -42,7 +42,6 @@ body {
   /* cursor: pointer; */
   text-align: center;
   margin-right: 0;
-
   /* justify-content: center; */
 }
 
@@ -55,4 +54,29 @@ body {
 .game-preview-title {
   justify-content: center;
   margin-top: 5px;
+}
+
+.review-container {
+  /* row-gap: 16px; */
+  justify-content: space-evenly;
+  padding-top: 10px;
+  padding-left: 3px;
+  text-decoration: none;
+}
+
+.review-preview {
+  height: fit-content;
+  min-height: 225px;
+  max-height: 235px;
+  width: 250px;
+  /* display: flex; */
+  padding: 2px;
+  border-style: ridge;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #f9f5eb;
+  /* cursor: pointer; */
+  text-align: center;
+  margin-right: 0;
+  /* justify-content: center; */
 }
