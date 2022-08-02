@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     // auto-login
-    fetch('/me').then((r) => {
+    fetch("/myaccount").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
@@ -25,8 +25,11 @@ function App() {
       <main>
         {/* {user ? (
           <Switch>
-            <Route path='/'>
-              <Home user={user} />
+            <Route exact path="/">
+              <Home user={user}/>
+            </Route>
+            <Route exact path="/myaccount">
+              <AccountPage user={user}/>
             </Route>
           </Switch>
         ) : ( */}
