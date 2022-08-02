@@ -1,5 +1,6 @@
 body {
   background-color: #eae3d2;
+  text-decoration: none;
 }
 
 .header {
@@ -24,9 +25,10 @@ body {
   justify-content: space-evenly;
   padding-top: 10px;
   padding-left: 3px;
+  text-decoration: none;
 }
 
-.game-card {
+.game-preview {
   height: fit-content;
   min-height: 225px;
   max-height: 235px;
@@ -37,19 +39,20 @@ body {
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   background-color: #f9f5eb;
-  cursor: pointer;
+  /* cursor: pointer; */
   text-align: center;
+  margin-right: 0;
 
   /* justify-content: center; */
 }
 
-.game-card-image {
+.game-preview-image {
   width: 252px;
   height: 175px;
   border-radius: 3px;
 }
 
-.game-card-title {
+.game-preview-title {
   justify-content: center;
   margin-top: 5px;
 }
