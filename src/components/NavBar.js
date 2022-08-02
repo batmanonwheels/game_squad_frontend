@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
-    fetch("http://localhost:3000/logout", { method: "DELETE" }).then((r) => {
+    fetch('http://localhost:3000/logout', { method: 'DELETE' }).then((r) => {
       if (r.ok) {
         setUser(null);
       }
@@ -11,17 +11,18 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-    <header>
+    <header className='header'>
       <div>
-        <Link to="/">Home</Link>
+        <Link to='/'>Home</Link>
+        <Link to='/games'>Games</Link>
       </div>
       <div>
         {user ? (
           <button onClick={handleLogoutClick}>Logout</button>
         ) : (
           <>
-            <Link to="/signup">Signup</Link>
-            <Link to="/login">Login</Link>
+            <Link to='/signup'>Signup</Link>
+            <Link to='/login'>Login</Link>
           </>
         )}
       </div>
