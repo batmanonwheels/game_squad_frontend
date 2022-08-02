@@ -5,6 +5,8 @@ function SignUp({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   function handleSubmit(e) {
     console.log(e)
@@ -15,6 +17,8 @@ function SignUp({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
         username: username,
         password: password,
         password_confirmation: passwordConfirmation,
@@ -30,6 +34,22 @@ function SignUp({ setUser }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
+        <label htmlFor="first-name">First Name</label>
+        <input
+          type="text"
+          id="first-name"
+          autoComplete="off"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <label htmlFor="last-name">Last Name</label>
+        <input
+          type="text"
+          id="last-name"
+          autoComplete="off"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
         <label htmlFor="username">Username</label>
         <input
           type="text"
