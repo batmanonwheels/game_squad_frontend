@@ -15,6 +15,8 @@ function GameInfo({user}) {
       .then((res) => res.json())
       .then((data) => setGameData(data));
   }, []);
+
+
     function handleSubmitReview(e){
         e.preventDefault()
         const reviewObj = {
@@ -33,9 +35,19 @@ function GameInfo({user}) {
             },
             body: JSON.stringify(reviewObj)
         }).then((r) => r.json())
-        .then((data)=> console.log(data))
+        .then((review)=> console.log(review))
     }
+    console.log(gameData)
 
+    const renderReviews = gameData.reviews ?  gameData.reviews.map((review) => (
+        <div id="review-info">
+            <h3>{review.title}</h3>
+            <p>{review.description}</p>
+            <p>Rating: {review.rating}</p>
+            <p>Upvotes: {review.upvotes} </p>
+            <p>Downvotes: {review.downvotes}</p>
+        </div>
+    )) : null
   return (
     <>
     <div className='game-info'>
@@ -47,11 +59,7 @@ function GameInfo({user}) {
       <h1 className='game-info-title'>{gameData.title}</h1>
       <h3 className='game-info-genre'>Genre: {gameData.genre}</h3>
       <h3 className='game-info-platform'>Platform: {gameData.platform}</h3>
-      {/* <ul className='game-info-reviews'>
-        {gameData.reviews.map(review) => {
-          <li></li>
-        }};
-      </ul> */}
+    {renderReviews}
     </div>
     <form onSubmit={(e)=>{handleSubmitReview(e)}}>
         <label>title</label>
