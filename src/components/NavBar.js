@@ -25,18 +25,12 @@ function NavBar({ user, setUser }) {
         {user ? (
           <>
             <div>
-              <Link to='/'>Home</Link>
-            </div>
-            <div>
               <Link to='/myaccount'>My Account</Link>
             </div>
             <button onClick={handleLogoutClick}>Logout</button>
           </>
         ) : (
           <>
-            <div>
-              <Link to='/signup'>Signup</Link>
-            </div>
             <div>
               <Link to='/login'>Login</Link>
             </div>

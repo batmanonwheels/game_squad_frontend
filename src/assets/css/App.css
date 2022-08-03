@@ -56,20 +56,27 @@ body {
   margin-top: 5px;
 }
 
+.game-info-image {
+  width: 1000px;
+  height: 100%;
+  border-radius: 3px;
+}
+
 .review-container {
   /* row-gap: 16px; */
-  justify-content: space-evenly;
+  display: grid;
+  /* justify-content: space-evenly; */
   padding-top: 10px;
   padding-left: 3px;
   text-decoration: none;
+  row-gap: 20px;
 }
 
 .review-preview {
   height: fit-content;
   min-height: 225px;
   max-height: 235px;
-  width: 250px;
-  /* display: flex; */
+  max-width: 1250px;
   padding: 2px;
   border-style: ridge;
   border-radius: 5px;
