@@ -30,10 +30,6 @@ function App() {
       .then((data) => setGames(data));
   }, []);
 
-  const renderInfo = (clickedGame) => {
-    setInfo(clickedGame);
-  };
-
   return (
     <>
       <NavBar user={user} setUser={setUser} />
@@ -47,7 +43,7 @@ function App() {
               <AccountPage user={user} />
             </Route>
             <Route exact path='/games'>
-              <GameList games={games} renderInfo={renderInfo} />
+              <GameList games={games} />
             </Route>
             <Route path='/games/:id'>
               <GameInfo />
