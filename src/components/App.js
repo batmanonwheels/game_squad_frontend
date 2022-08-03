@@ -46,7 +46,7 @@ function App() {
               <GameList games={games} />
             </Route>
             <Route path='/games/:id'>
-              <GameInfo />
+              <GameInfo user={user}/>
             </Route>
             <Route path='/reviews'>
               <ReviewList />
