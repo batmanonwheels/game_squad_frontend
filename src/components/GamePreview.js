@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 
 function GamePreview({
   id,
-  title,
-  genre,
-  platform,
-  image,
-  isClicked,
-  setIsClicked,
+  game,
+  setClickedGameId
 }) {
-  const handleGamePreviewClick = () => {};
+  const handleGamePreviewClick = () => {
+    setClickedGameId(id)
+    console.log("hi")
+  };
 
   return (
     <Link
@@ -18,8 +17,8 @@ function GamePreview({
       style={{ textDecoration: 'none', outline: 'none' }}
     >
       <div className='game-preview' onClick={handleGamePreviewClick}>
-        <img src={image} alt={title} className='game-preview-image' />
-        <h3 className='game-preview-title'>{title}</h3>
+        <img src={game.image} alt={game.title} className='game-preview-image' />
+        <h3 className='game-preview-title'>{game.title}</h3>
       </div>
     </Link>
   );
