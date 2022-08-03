@@ -13,7 +13,7 @@ import '../assets/css/App.css';
 function App() {
   const [user, setUser] = useState(null);
   const [games, setGames] = useState([]);
-  const [clickedGameId, setClickedGameId] = useState();
+  const [info, setInfo] = useState({});
 
   useEffect(() => {
     // auto-login
@@ -30,6 +30,10 @@ function App() {
       .then((data) => setGames(data));
   }, []);
 
+  const renderInfo = (clickedGame) => {
+    setInfo(clickedGame)
+  };
+
   return (
     <>
       <NavBar user={user} setUser={setUser} />
@@ -43,10 +47,10 @@ function App() {
               <AccountPage user={user} />
             </Route>
             <Route path='/games'>
-              <GameList games={games} setClickedGameId={setClickedGameId}/>
+              <GameList games={games} renderInfo={renderInfo}/>
             </Route>
-            <Route path={`/games/${clickedGameId}`}>
-              <GameInfo game={games[clickedGameId]}/>
+            <Route path={`/info`}>
+              <GameInfo info={info}/>
             </Route>
             <Route path='/reviews'>
               <ReviewList />

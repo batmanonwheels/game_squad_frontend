@@ -1,7 +1,7 @@
 import React from 'react';
 import GamePreview from './GamePreview';
 
-function GameList({games, setClickedGameId}) {
+function GameList({games, renderInfo}) {
   
   return (
     <div className='game-container'>
@@ -10,7 +10,7 @@ function GameList({games, setClickedGameId}) {
           key={game.id}
           id={game.id}
           game={game}
-          setClickedGameId={setClickedGameId}
+          renderInfo={renderInfo}
         />
       ))}
     </div>
