@@ -1,15 +1,36 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import '../assets/css/GameInfo.css';
 
-function GameInfo ({info}) {
-    console.log(info)
-    return (
-        <div className="game-info">
-            <div id="game-title">{info.title}</div>
-            <img src={info.image} id="game-image"/>
-            <div id="game-genre">Genre: {info.genre}</div>
-            <div id="game-platform">Platform: {info.platform}</div>
-        </div>
-    )
+function GameInfo() {
+  const { id } = useParams();
+  const [gameData, setGameData] = useState({});
+
+  useEffect(() => {
+    fetch(`/games/${id}`)
+      .then((res) => res.json())
+      .then((data) => setGameData(data));
+  }, []);
+
+  console.log(gameData);
+
+  return (
+    <div className='game-info'>
+      <img
+        className='game-info-image'
+        src={gameData.image}
+        alt={gameData.title}
+      />
+      <h1 className='game-info-title'>{gameData.title}</h1>
+      <h3 className='game-info-genre'>Genre: {gameData.genre}</h3>
+      <h3 className='game-info-platform'>Platform: {gameData.platform}</h3>
+      {/* <ul className='game-info-reviews'>
+        {gameData.reviews.map(review) => {
+          <li></li>
+        }};
+      </ul> */}
+    </div>
+  );
 }
 
 export default GameInfo;

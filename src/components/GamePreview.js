@@ -1,16 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Routes, Route, useParams } from 'react-router-dom';
 
-function GamePreview({
-  id,
-  game,
-  renderInfo
-}) {
-  
-
+function GamePreview({ id, game, renderInfo }) {
   return (
     <Link
-      to={`/info`}
+      to={`/games/${id}`}
       style={{ textDecoration: 'none', outline: 'none' }}
     >
       <div className='game-preview' onClick={() => renderInfo(game)}>

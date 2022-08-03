@@ -7,7 +7,7 @@ import Home from './Home';
 import GameList from './GameList';
 import ReviewList from './ReviewList';
 import AccountPage from './AccountPage';
-import GameInfo from "./GameInfo";
+import GameInfo from './GameInfo';
 import '../assets/css/App.css';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
       }
     });
   }, []);
-  
+
   useEffect(() => {
     fetch('/games')
       .then((res) => res.json())
@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   const renderInfo = (clickedGame) => {
-    setInfo(clickedGame)
+    setInfo(clickedGame);
   };
 
   return (
@@ -46,28 +46,25 @@ function App() {
             <Route exact path='/myaccount'>
               <AccountPage user={user} />
             </Route>
-            <Route path='/games'>
-              <GameList games={games} renderInfo={renderInfo}/>
+            <Route exact path='/games'>
+              <GameList games={games} renderInfo={renderInfo} />
             </Route>
-            <Route path={`/info`}>
-              <GameInfo info={info}/>
+            <Route path='/games/:id'>
+              <GameInfo />
             </Route>
             <Route path='/reviews'>
               <ReviewList />
             </Route>
           </Switch>
         ) : (
-        <Switch>
-          <Route path='/signup'>
-            <SignUp setUser={setUser} />
-          </Route>
-          <Route path='/login'>
-            <Login setUser={setUser} />
-          </Route>
-          <Route path='/'>
-            <Home />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route path='/signup'>
+              <SignUp setUser={setUser} />
+            </Route>
+            <Route path='/login'>
+              <Login setUser={setUser} />
+            </Route>
+          </Switch>
         )}
       </main>
     </>
