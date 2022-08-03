@@ -1,13 +1,13 @@
+import '../assets/css/GameInfo.css';
 
-
-function GameInfo ({game}) {
-
+function GameInfo ({info}) {
+    console.log(info)
     return (
         <div className="game-info">
-            <div id="game-title">{game.title}</div>
-            <img src={game.image} id="game-image"/>
-            <div id="game-genre">Genre: {game.genre}</div>
-            <div id="game-platform">Platform: {game.platform}</div>
+            <div id="game-title">{info.title}</div>
+            <img src={info.image} id="game-image"/>
+            <div id="game-genre">Genre: {info.genre}</div>
+            <div id="game-platform">Platform: {info.platform}</div>
         </div>
     )
 }

@@ -12,7 +12,7 @@ function Login({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ 
-        username:username, 
+        username: username, 
         password: password }),
     }).then((r) => {
       if (r.ok) {

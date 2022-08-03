@@ -1,0 +1,10 @@
+* {
+    float: center;
+    text-align: center;
+}
+
+#game-image {
+    height: 500px;
+    width: auto;
+    float: center;
+}
