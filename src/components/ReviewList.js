@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import ReviewPreview from './ReviewPreview';
 
 function ReviewList({ user, userid, reviews, handleDelete, handleUpdate }) {
+  console.log(reviews)
   return (
     <div className='review-container'>
       {reviews

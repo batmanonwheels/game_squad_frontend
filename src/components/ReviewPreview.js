@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function ReviewPreview({
@@ -14,15 +14,27 @@ function ReviewPreview({
   handleDelete,
   handleUpdate,
 }) {
-  const onVote = (e) => {
-    let changes = {};
-    if (e.target.name === 'up') {
-      changes.upvotes = upvotes + 1;
-    } else if (e.target.name === 'down') {
-      changes.downvotes = downvotes + 1;
+  const [updoot,setUpdoots] = useState(upvotes)
+  const [downdoot, setDowndoots] = useState(downvotes)
+
+  
+
+  function handleUpdoot(){
+    setUpdoots(updoot + 1 )
+    let changes = {
+      upvotes: updoot + 1, 
     }
-    handleUpdate(changes, id);
-  };
+    handleUpdate(changes,id)
+  }
+
+  function handleDowndoot(){
+    setDowndoots(downdoot -1)
+    let changes = {
+      downvotes: downdoot - 1,
+    }
+    handleUpdate(changes,id)
+  }
+
 
   function onDelete() {
     handleDelete(id);
@@ -51,21 +63,21 @@ function ReviewPreview({
         <p className='review-description'>{description}</p>
         {userid === review_user_id ? (
           <div className='voting-buttons'>
-            <p className='review-upvotes'>{upvotes} upvotes</p>
-            <p className='review-downvotes'>{downvotes} downvotes</p>
+            <p className='review-upvotes'>{updoot} upvotes</p>
+            <p className='review-downvotes'>{downdoot} downvotes</p>
             <button onClick={() => onDelete()}>Delete Review</button>
           </div>
         ) : (
           <div className='voting-buttons'>
-            <p className='review-upvotes'>{upvotes} upvotes</p>
-            <button className='review-upvote-button' name='up' onClick={onVote}>
+            <p className='review-upvotes'>{updoot} upvotes</p>
+            <button className='review-upvote-button' name='up' onClick={()=>handleUpdoot()}>
               +1
             </button>
-            <p className='review-downvotes'>{downvotes} downvotes</p>
+            <p className='review-downvotes'>{downdoot} downvotes</p>
             <button
               className='review-downvote-button'
               name='down'
-              onClick={onVote}
+              onClick={()=>handleDowndoot()}
             >
               -1
             </button>
