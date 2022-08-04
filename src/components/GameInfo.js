@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../assets/css/GameInfo.css';
-import ReviewPreview from './ReviewPreview';
+import GameReviewList from './GameReviewList';
 
 function GameInfo({ user }) {
   const { id } = useParams();
@@ -29,7 +29,6 @@ function GameInfo({ user }) {
   };
 
   function handleSubmitReview(e) {
-  
     fetch('/reviews', {
       method: 'POST',
       headers: {
@@ -40,28 +39,7 @@ function GameInfo({ user }) {
       .then((r) => r.json())
       .then((review) => console.log(review))
       .then(setFormData(defaultFormData));
-  
   }
-
-  const renderReviews = gameData.reviews
-    ? gameData.reviews.map((review) => (
-        <div id='review-info'>
-          <ReviewPreview
-            key={review.id}
-            id={review.id}
-            title={review.title}
-            description={review.description}
-            upvotes={review.upvotes}
-            downvotes={review.downvotes}
-            rating={review.rating}
-            game_id={review.game_id}
-            user_id={review.user_id}
-            game={gameData}
-            userid={user.id}
-          />
-        </div>
-      ))
-    : null;
 
   return (
     <>
@@ -74,7 +52,7 @@ function GameInfo({ user }) {
         <h1 className='game-info-title'>{gameData.title}</h1>
         <h3 className='game-info-genre'>Genre: {gameData.genre}</h3>
         <h3 className='game-info-platform'>Platform: {gameData.platform}</h3>
-        {renderReviews}
+        <GameReviewList user={user} gameData={gameData} />
       </div>
       <form
         onSubmit={(e) => {

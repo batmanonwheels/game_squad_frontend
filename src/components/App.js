@@ -13,7 +13,8 @@ import '../assets/css/App.css';
 function App() {
   const [user, setUser] = useState(null);
   const [games, setGames] = useState([]);
-  const [info, setInfo] = useState({});
+  const [reviews, setReviews] = useState([]);
+  const [updateState, setUpdateState] = useState([]);
 
   useEffect(() => {
     // auto-login
@@ -29,6 +30,30 @@ function App() {
       .then((res) => res.json())
       .then((data) => setGames(data));
   }, []);
+
+  useEffect(() => {
+    fetch('/reviews')
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
+
+  const handleDelete = (id) => {
+    fetch(`/reviews/${id}`, {
+      method: 'Delete',
+    }).then((r) => r.json());
+    setReviews(reviews.filter((review) => review.id !== id));
+  };
+
+  const handleUpdate = (changes, id) => {
+    // console.log(changes, id);
+    fetch(`/reviews/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(changes),
+    })
+      .then((response) => response.json())
+      .then((data) => setUpdateState(data));
+  };
 
   return (
     <>
@@ -49,7 +74,13 @@ function App() {
               <GameInfo user={user} />
             </Route>
             <Route path='/reviews'>
-              <ReviewList user={user} />
+              <ReviewList
+                user={user}
+                reviews={reviews}
+                games={games}
+                handleDelete={handleDelete}
+                handleUpdate={handleUpdate}
+              />
             </Route>
             <Route exact path='/'>
               <Home user={user} games={games} />
