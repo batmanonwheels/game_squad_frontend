@@ -41,24 +41,23 @@ function GameInfo({ user }) {
       .then((review) => console.log(review))
       .then(setFormData(defaultFormData));
   }
-  console.log(gameData);
 
   const renderReviews = gameData.reviews
     ? gameData.reviews.map((review) => (
         <div id='review-info'>
-         <ReviewPreview
-          key={review.id}
-          id={review.id}
-          title={review.title}
-          description={review.description}
-          upvotes={review.upvotes}
-          downvotes={review.downvotes}
-          rating={review.rating}
-          game_id={review.game_id}
-          user_id={review.user_id}
-          game={gameData}
-          userid={user.id}
-        />
+          <ReviewPreview
+            key={review.id}
+            id={review.id}
+            title={review.title}
+            description={review.description}
+            upvotes={review.upvotes}
+            downvotes={review.downvotes}
+            rating={review.rating}
+            game_id={review.game_id}
+            user_id={review.user_id}
+            game={gameData}
+            userid={user.id}
+          />
         </div>
       ))
     : null;

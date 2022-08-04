@@ -63,7 +63,7 @@ function App() {
             <Route path='/login'>
               <Login setUser={setUser} />
             </Route>
-            <Route path='/'>
+            <Route exact path='/'>
               <Home user={user} games={games} />
             </Route>
           </Switch>
