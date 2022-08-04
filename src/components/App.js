@@ -37,7 +37,7 @@ function App() {
         {user ? (
           <Switch>
             <Route exact path='/'>
-              <Home user={user} />
+              <Home user={user} games={games} />
             </Route>
             <Route exact path='/myaccount'>
               <AccountPage user={user} />
@@ -46,7 +46,7 @@ function App() {
               <GameList games={games} />
             </Route>
             <Route path='/games/:id'>
-              <GameInfo user={user}/>
+              <GameInfo user={user} />
             </Route>
             <Route path='/reviews'>
               <ReviewList />
