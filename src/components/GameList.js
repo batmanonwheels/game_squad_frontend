@@ -1,8 +1,7 @@
 import React from 'react';
 import GamePreview from './GamePreview';
 
-function GameList({games, renderInfo}) {
-  
+function GameList({ games, renderInfo }) {
   return (
     <div className='game-container'>
       {games.map((game) => (
