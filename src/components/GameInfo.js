@@ -29,7 +29,7 @@ function GameInfo({ user }) {
   };
 
   function handleSubmitReview(e) {
-    e.preventDefault();
+  
     fetch('/reviews', {
       method: 'POST',
       headers: {
@@ -40,6 +40,7 @@ function GameInfo({ user }) {
       .then((r) => r.json())
       .then((review) => console.log(review))
       .then(setFormData(defaultFormData));
+  
   }
 
   const renderReviews = gameData.reviews

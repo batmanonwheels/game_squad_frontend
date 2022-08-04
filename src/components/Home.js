@@ -1,6 +1,7 @@
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { Link } from 'react-router-dom';
+import Login from './Login';
 
 function Home({ user, games }) {
   const handleDragStart = (e) => e.preventDefault();
@@ -40,7 +41,7 @@ function Home({ user, games }) {
       </>
     );
   } else {
-    return <h1>Please Login or Sign Up</h1>;
+    return <Login/>
   }
 }
 

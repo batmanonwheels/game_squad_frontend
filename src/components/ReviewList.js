@@ -28,6 +28,13 @@ function ReviewList({ user }) {
     }).then((response) => response.json());
   };
 
+  function handleDelete(id){
+    fetch(`/reviews/${id}`, {
+      method: "Delete",
+    })
+      .then(r => r.json())
+    setReview(reviews.filter((review) => review.id !==id))
+  }
   return (
     <div className='review-container'>
       {reviews.map((review) => (
