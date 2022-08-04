@@ -3,7 +3,6 @@ import ReviewPreview from './ReviewPreview';
 
 function ReviewList({ user }) {
   const [reviews, setReview] = useState([]);
-  // const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     fetch('/reviews')
@@ -11,7 +10,23 @@ function ReviewList({ user }) {
       .then((data) => setReview(data));
   }, []);
 
-  console.log(user.id);
+  console.log(reviews);
+
+  function handleDelete(id) {
+    fetch(`/reviews/${id}`, {
+      method: 'Delete',
+    }).then((r) => r.json());
+    setReview(reviews.filter((review) => review.id !== id));
+  }
+
+  const handleUpdate = (changes, id) => {
+    console.log(changes);
+    fetch(`/reviews/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(changes),
+    }).then((response) => response.json());
+  };
 
   function handleDelete(id){
     fetch(`/reviews/${id}`, {
@@ -36,6 +51,7 @@ function ReviewList({ user }) {
           game={review.game}
           userid={user.id}
           handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
         />
       ))}
     </div>

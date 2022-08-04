@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReviewList from './ReviewList';
-import ReviewPreview from './ReviewPreview';
 
 function AccountPage({ user }) {
   return (

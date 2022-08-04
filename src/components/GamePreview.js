@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Routes, Route, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function GamePreview({ id, game }) {
   return (
