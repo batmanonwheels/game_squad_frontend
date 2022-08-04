@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function SignUp({ setUser }) {
   const [username, setUsername] = useState('');
@@ -75,6 +75,9 @@ function SignUp({ setUser }) {
           autoComplete='current-password'
         />
         <button type='submit'>Sign Up</button>
+        <p>
+        Already a user? <Link to='/login'>Sign In</Link>
+      </p>
       </form>
     </div>
   );
