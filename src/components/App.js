@@ -16,6 +16,7 @@ function App() {
   const [reviews, setReviews] = useState([]);
   const [updateState, setUpdateState] = useState([]);
 
+
   useEffect(() => {
     // auto-login
     fetch('/myaccount').then((r) => {
@@ -44,8 +45,8 @@ function App() {
     setReviews(reviews.filter((review) => review.id !== id));
   };
 
-  const handleUpdate = (changes, id) => {
-    // console.log(changes, id);
+  const handleUpdate = (changes,id) => {
+    console.log(changes)
     fetch(`/reviews/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
