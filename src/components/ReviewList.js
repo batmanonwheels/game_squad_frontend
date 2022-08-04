@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReviewPreview from './ReviewPreview';
 
-function ReviewList({ userid }) {
+function ReviewList({ user }) {
   const [reviews, setReview] = useState([]);
   // const [isClicked, setIsClicked] = useState(false);
 
@@ -11,7 +11,7 @@ function ReviewList({ userid }) {
       .then((data) => setReview(data));
   }, []);
 
-  console.log(userid);
+  console.log(user.id);
 
   return (
     <div className='review-container'>
@@ -25,9 +25,9 @@ function ReviewList({ userid }) {
           downvotes={review.downvotes}
           rating={review.rating}
           game_id={review.game_id}
-          user_id={review.user_id}
+          review_user_id={review.user_id}
           game={review.game}
-          userid={userid}
+          userid={user.id}
         />
       ))}
     </div>

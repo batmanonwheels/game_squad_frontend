@@ -49,7 +49,7 @@ function App() {
               <GameInfo user={user}/>
             </Route>
             <Route path='/reviews'>
-              <ReviewList />
+              <ReviewList user={user}/>
             </Route>
             <Route path='/'>
               <Home user={user} />
