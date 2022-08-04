@@ -46,7 +46,7 @@ function Login({ setUser }) {
         <button type='submit'>Login</button>
       </form>
       <p>
-        Not a user yet? <Link to='/signup'>Sign Up</Link>
+        Not a user yet? <Link to='/'>Sign Up</Link>
       </p>
     </div>
   );

@@ -13,6 +13,13 @@ function ReviewList({ user }) {
 
   console.log(user.id);
 
+  function handleDelete(id){
+    fetch(`/reviews/${id}`, {
+      method: "Delete",
+    })
+      .then(r => r.json())
+    setReview(reviews.filter((review) => review.id !==id))
+  }
   return (
     <div className='review-container'>
       {reviews.map((review) => (
@@ -28,6 +35,7 @@ function ReviewList({ user }) {
           review_user_id={review.user_id}
           game={review.game}
           userid={user.id}
+          handleDelete={handleDelete}
         />
       ))}
     </div>
