@@ -9,8 +9,8 @@ function ReviewPreview({
   downvotes,
   rating,
   review_user_id,
-  game,
   userid,
+  game,
   handleDelete,
   handleUpdate,
 }) {
