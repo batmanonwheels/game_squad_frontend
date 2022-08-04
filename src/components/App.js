@@ -36,10 +36,10 @@ function App() {
       <main>
         {user ? (
           <Switch>
-            <Route exact path='/'>
+            <Route path='/login'>
               <Home user={user} />
             </Route>
-            <Route exact path='/myaccount'>
+            <Route path='/myaccount'>
               <AccountPage user={user} />
             </Route>
             <Route exact path='/games'>
@@ -51,6 +51,9 @@ function App() {
             <Route path='/reviews'>
               <ReviewList />
             </Route>
+            <Route path='/'>
+              <Home user={user} />
+            </Route>
           </Switch>
         ) : (
           <Switch>
@@ -59,6 +62,9 @@ function App() {
             </Route>
             <Route path='/login'>
               <Login setUser={setUser} />
+            </Route>
+            <Route path='/'>
+              <Home user={user} />
             </Route>
           </Switch>
         )}

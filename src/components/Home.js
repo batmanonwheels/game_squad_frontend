@@ -1,10 +1,22 @@
+import React from "react";
+import Login from './Login';
+
 function Home({ user }) {
-  // console.log(user)
-  if (user) {
-    return <h1>Welcome to GameSquad, {user.username}!</h1>;
-  } else {
-    return <h1>Please Login or Sign Up</h1>;
-  }
+
+    return (
+      <div>
+      {user ? 
+        (
+        <h1>Welcome to GameSquad, {user.first_name}!</h1> 
+        )
+      :
+        (
+        <Login />
+        )
+      }
+      </div>
+  )
 }
+
 
 export default Home;
