@@ -63,27 +63,49 @@ body {
 }
 
 .review-container {
-  /* row-gap: 16px; */
   display: grid;
-  /* justify-content: space-evenly; */
-  padding-top: 10px;
-  padding-left: 3px;
-  text-decoration: none;
+  column-gap: 10px;
   row-gap: 20px;
+  padding: 10px;
+  border-style: ridge;
+  border-radius: 5px;
+  box-shadow: 4px 3px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.review-preview {
-  height: fit-content;
-  min-height: 225px;
-  max-height: 235px;
-  max-width: 1250px;
-  padding: 2px;
+.review {
+  /* height: fit-content; */
+  height: 230px;
+  width: 100%;
+  padding: -2px;
+
   border-style: ridge;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   background-color: #f9f5eb;
   /* cursor: pointer; */
   text-align: center;
-  margin-right: 0;
   /* justify-content: center; */
+}
+
+.review-image {
+  margin-left: -10px;
+  margin-top: -10px;
+
+  height: 238px;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 3px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.review-text {
+  display: flex;
+  grid-row-end: auto;
+  padding-left: 10px;
+}
+
+.review-game-title {
+  text-align: left;
+}
+
+.review-title-rating {
+  text-align: left;
 }
