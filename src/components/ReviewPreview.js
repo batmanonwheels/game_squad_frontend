@@ -15,7 +15,7 @@ function ReviewPreview({
   const handleVote = (e) => {
     console.log(e.target.value);
   };
-
+  console.log(game)
   console.log(useParams());
   return (
     <div className='review'>

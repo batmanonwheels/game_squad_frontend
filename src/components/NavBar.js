@@ -12,28 +12,31 @@ function NavBar({ user, setUser }) {
 
   return (
     <header className='header'>
-      <div>
-        <Link to='/'>Home</Link>
-      </div>
-      <div>
-        <Link to='/games'>Games</Link>
-      </div>
-      <div>
-        <Link to='/reviews'>Reviews</Link>
-      </div>
+
+
       <div>
         {user ? (
           <>
-            <div>
+            <span>
+              <Link to='/'>Home</Link>
+            </span>
+            <span>
+               <Link to='/games'>Games</Link>
+            </span>
+            <span>
+               <Link to='/reviews'>Reviews</Link>
+            </span>
+            <span>
               <Link to='/myaccount'>My Account</Link>
-            </div>
-            <button onClick={handleLogoutClick}>Logout</button>
+              <button onClick={handleLogoutClick}>
+                <Link to="/login">
+                Logout
+                </Link>
+                </button>
+            </span>
           </>
         ) : (
           <>
-            <div>
-              <Link to='/login'>Login</Link>
-            </div>
           </>
         )}
       </div>

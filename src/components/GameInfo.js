@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../assets/css/GameInfo.css';
+import ReviewPreview from './ReviewPreview';
 
 function GameInfo({ user }) {
   const { id } = useParams();
@@ -40,16 +41,24 @@ function GameInfo({ user }) {
       .then((review) => console.log(review))
       .then(setFormData(defaultFormData));
   }
-  // console.log(gameData);
+  console.log(gameData);
 
   const renderReviews = gameData.reviews
     ? gameData.reviews.map((review) => (
         <div id='review-info'>
-          <h3>{review.title}</h3>
-          <p>{review.description}</p>
-          <p>Rating: {review.rating}</p>
-          <p>Upvotes: {review.upvotes} </p>
-          <p>Downvotes: {review.downvotes}</p>
+         <ReviewPreview
+          key={review.id}
+          id={review.id}
+          title={review.title}
+          description={review.description}
+          upvotes={review.upvotes}
+          downvotes={review.downvotes}
+          rating={review.rating}
+          game_id={review.game_id}
+          user_id={review.user_id}
+          game={gameData}
+          userid={user.id}
+        />
         </div>
       ))
     : null;
