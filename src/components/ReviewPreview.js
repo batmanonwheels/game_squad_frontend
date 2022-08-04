@@ -8,15 +8,18 @@ function ReviewPreview({
   upvotes,
   downvotes,
   rating,
-  user_id,
+  review_user_id,
   game,
   userid,
 }) {
   const handleVote = (e) => {
     console.log(e.target.value);
   };
-  console.log(game)
-  console.log(useParams());
+
+  function handleDelete(){
+    console.log(id)
+  }
+
   return (
     <div className='review'>
       {/* <img src={game.image} alt={game.title} height='250' width='250' />
@@ -34,10 +37,11 @@ function ReviewPreview({
         <h3 className='review-game-title'>Game Title</h3>
         {/* <h4 className='review-rating'>{rating}</h4> */}
         <p className='review-description'>{description}</p>
-        {userid === user_id ? (
+        {userid === review_user_id ? (
           <div className='voting-buttons'>
             <p className='review-upvotes'>{upvotes} upvotes</p>
             <p className='review-downvotes'>{downvotes} downvotes</p>
+            <button onClick={()=>handleDelete()}>Delete Review</button>
           </div>
         ) : (
           <div className='voting-buttons'>
