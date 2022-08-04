@@ -11,13 +11,14 @@ function ReviewPreview({
   review_user_id,
   game,
   userid,
+  handleDelete
 }) {
   const handleVote = (e) => {
     console.log(e.target.value);
   };
 
-  function handleDelete(){
-    console.log(id)
+  function onDelete(){
+    handleDelete(id)
   }
 
   return (
@@ -41,7 +42,7 @@ function ReviewPreview({
           <div className='voting-buttons'>
             <p className='review-upvotes'>{upvotes} upvotes</p>
             <p className='review-downvotes'>{downvotes} downvotes</p>
-            <button onClick={()=>handleDelete()}>Delete Review</button>
+            <button onClick={()=>onDelete()}>Delete Review</button>
           </div>
         ) : (
           <div className='voting-buttons'>
