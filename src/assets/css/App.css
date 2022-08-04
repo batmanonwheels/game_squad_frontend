@@ -1,20 +1,35 @@
 body {
   background-color: #eae3d2;
   text-decoration: none;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+span {
+  text-decoration: none;
+  margin-top: 50px;
+  padding: 100px;
+  font-size: 40px;
+  
+}
+
+span:hover {
+  color: white;
 }
 
 .header {
+  text-decoration: none;
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 5vh;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
   position: sticky;
   top: 0px;
   /* background-color: #ebd8c3; */
   z-index: 1000;
   background-color: #eae3d2;
+  
 }
 
 .game-container {
@@ -26,6 +41,10 @@ body {
   padding-top: 10px;
   padding-left: 3px;
   text-decoration: none;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .game-preview {
@@ -43,6 +62,9 @@ body {
   text-align: center;
   margin-right: 0;
   /* justify-content: center; */
+}
+.game-preview:hover {
+  transform: scale(1.25)
 }
 
 .game-preview-image {
@@ -64,20 +86,24 @@ body {
 
 .review-container {
   display: grid;
-  column-gap: 10px;
-  row-gap: 20px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  /* column-gap: 10px;
+  row-gap: 20px; */
   padding: 10px;
-  border-style: ridge;
-  border-radius: 5px;
+  /* border-style: ridge;
+  border-radius: 5px; */
   box-shadow: 4px 3px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .review {
   /* height: fit-content; */
-  height: 230px;
-  width: 100%;
+  height: 300px;
+  width: 800px;
   padding: -2px;
-
+  margin-left: 30px;
   border-style: ridge;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -90,22 +116,25 @@ body {
 .review-image {
   margin-left: -13px;
   margin-top: -13px;
-
-  height: 238px;
-  width: 50%;
+  height: 280px;
+  width: auto;
   border-radius: 8px;
   box-shadow: 3px 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .review-text {
-  display: flex;
+  /* display: flex; */
+  text-align: center;
   grid-row-end: auto;
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .review-game-title {
-  text-align: left;
+  text-align: center;
 }
 
 .review-title-rating {
-  text-align: left;
+  text-align: center;
+  /* width: 1000px; */
+  /* margin-right: 100px; */
 }
+
