@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 function Home({ user, games }) {
   const handleDragStart = (e) => e.preventDefault();
 
-  const routeToGame = () => {};
-
   const items = games.map((game) => {
     return (
       <Link
@@ -20,25 +18,30 @@ function Home({ user, games }) {
           role='presentation'
           width='90%'
           height='600px'
-          onClick={routeToGame}
         />
       </Link>
     );
   });
 
-  console.log(items);
+  // console.log(items);
   if (user) {
     return (
       <>
         <h1>Welcome to GameSquad, {user.username}!</h1>
-        <AliceCarousel mouseTracking items={items} />
+        <AliceCarousel
+          autoPlay={true}
+          autoPlayInterval='2000'
+          autoPlayStrategy='default'
+          animationType='fadeout'
+          disableButtonsControls='true'
+          disableDotsControls='true'
+          items={items}
+        />
       </>
     );
   } else {
     return <h1>Please Login or Sign Up</h1>;
   }
-
 }
-
 
 export default Home;
