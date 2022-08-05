@@ -73,7 +73,7 @@ function ReviewPreview({
               name='up'
               onClick={() => handleUpdoot()}
             >
-              +1
+              ▲
             </button>
             <p className='review-downvotes'>{downdoot} downvotes</p>
             <button
@@ -81,7 +81,7 @@ function ReviewPreview({
               name='down'
               onClick={() => handleDowndoot()}
             >
-              -1
+              ▼
             </button>
           </div>
         )}
