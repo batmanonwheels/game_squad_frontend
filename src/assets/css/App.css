@@ -64,7 +64,8 @@ body {
 .game-preview-title {
   justify-content: center;
   margin-top: 5px;
-  background-color: white;;
+  background-color: white;
+  color: black;
 }
 
 .game-info-image {
@@ -96,7 +97,7 @@ body {
   border-style: ridge;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-  background-color: #f9f5eb;
+  background-color: white;
   /* cursor: pointer; */
   text-align: center;
   /* justify-content: center; */
@@ -115,14 +116,17 @@ body {
   text-align: center;
   grid-row-end: auto;
   margin-left: 10px;
+  background-color: white;
 }
 
 .review-game-title {
   text-align: center;
+  background-color: white;
 }
 
 .review-title-rating {
   text-align: center;
+  background-color: white;
   /* width: 1000px; */
   /* margin-right: 100px; */
 }
@@ -130,9 +134,36 @@ body {
 .link {
   padding-inline: 100px;
   font-size: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Arial;
+  color: black;
 }
 
-span:hover {
-  text-decoration: none;
-  transform: scale(1.1);
+.link:hover {
+  color: white;
+  font-size: 50px;
+}
+.voting-buttons {
+  background-color: white;
+}
+
+.review-description {
+  background-color: white;
+}
+
+.review-upvotes {
+  background-color: white;
+}
+
+.review-downvotes {
+  background-color: white;
+}
+
+.review-downvote-button {
+  background-color: white;
+}
+
+.review-upvote-button {
+  background-color: white;
 }
