@@ -54,12 +54,13 @@ function GameInfo({ user }) {
         <h3 className='game-info-platform'>Platform: {gameData.platform}</h3>
         <GameReviewList user={user} gameData={gameData} />
       </div>
+      <div className="game-info">Played this Game? Leave a review!</div><br></br>
       <form
         onSubmit={(e) => {
           handleSubmitReview(e);
         }}
       >
-        <label>Title: </label>
+        <label>Title: </label><br></br>
         <input
           placeholder='Give Your Review A Title'
           type='text'
@@ -68,7 +69,7 @@ function GameInfo({ user }) {
           value={formData.title}
           className="form-input"
         ></input><br></br>
-        <label>Your Review: </label>
+        <label>Your Review: </label><br></br>
         <textarea
           placeholder='Write Your Review Here'
           type='text'
