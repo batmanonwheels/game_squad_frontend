@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 function Login({ setUser }) {
   const [username, setUsername] = useState('');
@@ -19,6 +19,12 @@ function Login({ setUser }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
+        <Redirect
+          to={{
+            pathname: '/games',
+            search: '?utm=your+face',
+          }}
+        />;
       }
     });
   }

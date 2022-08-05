@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function ReviewPreview({
@@ -10,31 +10,29 @@ function ReviewPreview({
   rating,
   review_user_id,
   userid,
+  user,
   game,
   handleDelete,
   handleUpdate,
 }) {
-  const [updoot,setUpdoots] = useState(upvotes)
-  const [downdoot, setDowndoots] = useState(downvotes)
+  const [updoot, setUpdoots] = useState(upvotes);
+  const [downdoot, setDowndoots] = useState(downvotes);
 
-  
-
-  function handleUpdoot(){
-    setUpdoots(updoot + 1 )
+  function handleUpdoot() {
+    setUpdoots(updoot + 1);
     let changes = {
-      upvotes: updoot + 1, 
-    }
-    handleUpdate(changes,id)
+      upvotes: updoot + 1,
+    };
+    handleUpdate(changes, id);
   }
 
-  function handleDowndoot(){
-    setDowndoots(downdoot -1)
+  function handleDowndoot() {
+    setDowndoots(downdoot - 1);
     let changes = {
       downvotes: downdoot - 1,
-    }
-    handleUpdate(changes,id)
+    };
+    handleUpdate(changes, id);
   }
-
 
   function onDelete() {
     handleDelete(id);
@@ -70,14 +68,18 @@ function ReviewPreview({
         ) : (
           <div className='voting-buttons'>
             <p className='review-upvotes'>{updoot} upvotes</p>
-            <button className='review-upvote-button' name='up' onClick={()=>handleUpdoot()}>
+            <button
+              className='review-upvote-button'
+              name='up'
+              onClick={() => handleUpdoot()}
+            >
               +1
             </button>
             <p className='review-downvotes'>{downdoot} downvotes</p>
             <button
               className='review-downvote-button'
               name='down'
-              onClick={()=>handleDowndoot()}
+              onClick={() => handleDowndoot()}
             >
               -1
             </button>

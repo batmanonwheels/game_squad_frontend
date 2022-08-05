@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
 import NavBar from './NavBar';
@@ -15,7 +15,6 @@ function App() {
   const [games, setGames] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [updateState, setUpdateState] = useState([]);
-
 
   useEffect(() => {
     // auto-login
@@ -45,8 +44,8 @@ function App() {
     setReviews(reviews.filter((review) => review.id !== id));
   };
 
-  const handleUpdate = (changes,id) => {
-    console.log(changes)
+  const handleUpdate = (changes, id) => {
+    console.log(changes);
     fetch(`/reviews/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
@@ -56,17 +55,19 @@ function App() {
       .then((data) => setUpdateState(data));
   };
 
+  console.log(reviews);
+
   return (
     <>
       <NavBar user={user} setUser={setUser} />
       <main>
         {user ? (
           <Switch>
-            <Route path='/login'>
+            {/* <Route path='/login'>
               <Home user={user} games={games} />
-            </Route>
+            </Route> */}
             <Route path='/myaccount'>
-              <AccountPage user={user} />
+              <AccountPage user={user} handleDelete={handleDelete} />
             </Route>
             <Route exact path='/games'>
               <GameList games={games} />
@@ -93,7 +94,11 @@ function App() {
               <SignUp setUser={setUser} />
             </Route>
             <Route path='/login'>
-              <Login setUser={setUser} />
+              {user ? (
+                <Redirect to='/myaccount' />
+              ) : (
+                <Login setUser={setUser} />
+              )}
             </Route>
             <Route exact path='/'>
               <Home user={user} games={games} />
