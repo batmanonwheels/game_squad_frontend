@@ -9,6 +9,7 @@ import ReviewList from './ReviewList';
 import AccountPage from './AccountPage';
 import GameInfo from './GameInfo';
 import '../assets/css/App.css';
+import {Header} from 'semantic-ui-react'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -59,7 +60,9 @@ function App() {
 
   return (
     <>
+    <Header>
       <NavBar user={user} setUser={setUser} />
+      </Header>
       <main>
         {user ? (
           <Switch>
@@ -69,7 +72,7 @@ function App() {
             <Route path='/myaccount'>
               <AccountPage user={user} handleDelete={handleDelete} />
             </Route>
-            <Route exact path='/games'>
+            <Route path='/games'>
               <GameList games={games} />
             </Route>
             <Route path='/games/:id'>
