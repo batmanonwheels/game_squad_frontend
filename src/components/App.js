@@ -43,6 +43,7 @@ function App() {
       method: 'Delete',
     }).then((r) => r.json());
     setReviews(reviews.filter((review) => review.id !== id));
+    window.location.reload();
   };
 
   const handleUpdate = (changes, id) => {

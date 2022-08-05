@@ -6,7 +6,7 @@ function AccountPage({ user, handleDelete }) {
     <>
       <h1>Welcome, {user.first_name}!</h1>
       <h2>View your reviews here!</h2>
-      <UserReviewList user={user} handleDelete={handleDelete} />
+      <UserReviewList user={user} onDelete={handleDelete} />
     </>
   );
 }

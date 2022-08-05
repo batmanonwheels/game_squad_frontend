@@ -199,3 +199,22 @@ input {
   min-height: 20px;
   min-width: 300px;
 }
+h2 {
+  color: white;
+}
+
+#user-review {
+  margin-bottom: 30px;
+  color: #100720;
+  float: center;
+  justify-content: center;
+}
+
+h2.review-title-rating {
+  color: #100720;
+}
+
+.delete-button {
+  color: white;
+  font-size: 15px;
+}

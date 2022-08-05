@@ -24,7 +24,7 @@ function UserReviewList({ user, onDelete }) {
   // console.log(combinedData())
 
   return (
-    <div className='review-container'>
+    <div className='user-review-container'>
       <div className='review-info'>
         {/* {games ? (
           games.map((game) => (
@@ -41,7 +41,7 @@ function UserReviewList({ user, onDelete }) {
             let i = -1;
             i++;
             return (
-              <div className='review'>
+              <div id='user-review' className="review">
                 <img
                   src={games[i].image}
                   alt={games[i].title}
@@ -55,11 +55,11 @@ function UserReviewList({ user, onDelete }) {
                   <h3 className='review-game-title'>{games[i].title}</h3>
                   <p className='review-description'>{review.description}</p>
                   <div className='voting-buttons'>
-                    <p className='review-upvotes'>{review.updoot} upvotes</p>
+                    <p className='review-upvotes'>{review.upvotes} upvotes</p>
                     <p className='review-downvotes'>
-                      {review.downdoot} downvotes
+                      {review.downvotes} downvotes
                     </p>
-                    <button onClick={() => onDelete(review.id)}>
+                    <button className="delete-button" onClick={() => onDelete(review.id)}>
                       Delete Review
                     </button>
                   </div>
