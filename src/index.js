@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
 
-document.body.style = 'background: #fff;';
+// document.body.style = 'background: #fff;';
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";

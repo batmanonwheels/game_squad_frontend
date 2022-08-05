@@ -16,7 +16,7 @@ body {
   top: 0px;
   /* background-color: #ebd8c3; */
   z-index: 1000;
-  background-color: #eae3d2;
+  background-color: #100720;
   
 }
 
@@ -65,7 +65,7 @@ body {
   justify-content: center;
   margin-top: 5px;
   background-color: white;
-  color: black;
+  color: #100720;
 }
 
 .game-info-image {
@@ -137,11 +137,15 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-family: Arial;
-  color: black;
+  color: white;
+}
+
+h1 {
+  color: white;
 }
 
 .link:hover {
-  color: white;
+  color: #FFC23C;
   font-size: 50px;
 }
 .voting-buttons {
@@ -166,4 +170,32 @@ body {
 
 .review-upvote-button {
   background-color: white;
+}
+
+.form-input, label {
+  margin-bottom: 8px;
+  color: white;
+}
+
+button {
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.game-info {
+  color: white;
+}
+
+textarea {
+  min-height: 100px;
+  min-width: 300px;
+}
+
+input {
+  min-height: 20px;
+  min-width: 300px;
 }

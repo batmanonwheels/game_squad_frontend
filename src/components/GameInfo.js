@@ -54,41 +54,45 @@ function GameInfo({ user }) {
         <h3 className='game-info-platform'>Platform: {gameData.platform}</h3>
         <GameReviewList user={user} gameData={gameData} />
       </div>
+      <div className="game-info">Played this Game? Leave a review!</div><br></br>
       <form
         onSubmit={(e) => {
           handleSubmitReview(e);
         }}
       >
-        <label>title</label>
+        <label>Title: </label><br></br>
         <input
           placeholder='Give Your Review A Title'
           type='text'
           name='title'
           onChange={handleChange}
           value={formData.title}
-        ></input>
-        <label>review text</label>
+          className="form-input"
+        ></input><br></br>
+        <label>Your Review: </label><br></br>
         <textarea
-          placeholder='Write Your Review'
+          placeholder='Write Your Review Here'
           type='text'
           name='description'
           onChange={handleChange}
           value={formData.description}
-        ></textarea>
-        <label>rate</label>
+          className="form-input"
+        ></textarea><br></br>
+        <label>Rating: </label>
         <select
           id='rating'
           name='rating'
           onChange={handleChange}
           value={formData.rating}
+          className="form-input"
         >
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
           <option value='4'>4</option>
           <option value='5'>5</option>
-        </select>
-        <button>Submit Review</button>
+        </select><br></br>
+        <button className="form-input">Submit Review</button>
       </form>
     </>
   );
