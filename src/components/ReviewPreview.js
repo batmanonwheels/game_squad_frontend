@@ -37,7 +37,8 @@ function ReviewPreview({
   function onDelete() {
     handleDelete(id);
   }
-
+  console.log("userid:", userid)
+  console.log("review_user_id:", review_user_id)
   return (
     <div className='review'>
       <img
@@ -63,7 +64,7 @@ function ReviewPreview({
           <div className='voting-buttons'>
             <p className='review-upvotes'>{updoot} upvotes</p>
             <p className='review-downvotes'>{downdoot} downvotes</p>
-            <button onClick={() => onDelete()}>Delete Review</button>
+            <button class="game-info"onClick={() => onDelete()}>Delete Review</button>
           </div>
         ) : (
           <div className='voting-buttons'>

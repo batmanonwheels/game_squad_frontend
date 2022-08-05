@@ -17,6 +17,7 @@ body {
   /* background-color: #ebd8c3; */
   z-index: 1000;
   background-color: #100720;
+  width:100%;
   
 }
 
@@ -69,8 +70,8 @@ body {
 }
 
 .game-info-image {
-  width: 1000px;
-  height: 100%;
+  width: 100%;
+  height: auto;
   border-radius: 3px;
 }
 
@@ -98,6 +99,7 @@ body {
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   background-color: white;
+  color: #100720;
   /* cursor: pointer; */
   text-align: center;
   /* justify-content: center; */
@@ -132,8 +134,9 @@ body {
 }
 
 .link {
-  padding-inline: 100px;
-  font-size: 40px;
+  justify-content: space-around;
+  padding-inline: 20px;
+  font-size: 20px;
   text-decoration: none;
   font-weight: bold;
   font-family: Arial;
@@ -146,7 +149,7 @@ h1 {
 
 .link:hover {
   color: #FFC23C;
-  font-size: 50px;
+  font-size: 30px;
 }
 .voting-buttons {
   background-color: white;

@@ -16,7 +16,7 @@ function GameReviewList({ gameData, user }) {
               downvotes={review.downvotes}
               rating={review.rating}
               game_id={review.game_id}
-              user_id={review.user_id}
+              review_user_id={review.user_id}
               game={gameData}
               userid={user.id}
               // handleDelete={handleDelete}

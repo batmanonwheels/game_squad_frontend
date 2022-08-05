@@ -30,26 +30,30 @@ function Login({ setUser }) {
   }
 
   return (
-    <div>
+    <div class="game-info">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <label htmlFor='username'>Username</label>
         <input
+        class="game-info"
           type='text'
           id='username'
           autoComplete='off'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+        <br></br>
         <label htmlFor='password'>Password</label>
         <input
+        class="game-info"
           type='password'
           id='password'
           autoComplete='current-password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type='submit'>Login</button>
+        <br></br>
+        <button class="game-info"type='submit'>Login</button>
       </form>
       <p>
         Not a user yet? <Link to='/signup'>Sign Up</Link>

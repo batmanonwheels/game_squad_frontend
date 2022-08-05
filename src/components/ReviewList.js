@@ -16,7 +16,7 @@ function ReviewList({ user, userid, reviews, handleDelete, handleUpdate }) {
               downvotes={review.downvotes}
               rating={review.rating}
               game_id={review.game_id}
-              user_id={review.user_id}
+              review_user_id={review.user.id}
               game={review.game}
               userid={user.id}
               handleDelete={handleDelete}

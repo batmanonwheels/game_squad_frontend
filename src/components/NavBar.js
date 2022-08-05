@@ -15,7 +15,7 @@ function NavBar({ user, setUser }) {
     <header className='header'>
       <div>
         {user ? (
-          <Menu fluid widths={4} size='massive'>
+          <Menu>
               <span><MenuItem as={NavLink} to='/' className="link">Home</MenuItem></span>
               <span><MenuItem as={NavLink} to='/games' className="link">Games</MenuItem></span>
 
