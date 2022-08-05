@@ -1,16 +1,41 @@
 import React from 'react';
 
 function UserReviewList({ user, onDelete }) {
-  // const userReviews = user.reviews
-  //   ? reviews.map((review) => (review.user.id === user.id ? review : null))
-  //   : null;
+  const {games, reviews} = user
+  
+  // function combinedData(games,reviews){
+  //   let data = {};
+    
+  //   games.forEach((game)=>{
+  //     let data = {
+  //       gameTitle: game.title,
+  //       gameImage: game.image
+  //     }
+  //   })
+  //   reviews.forEach((review)=>{
+  //     let data = {
+  //       reviewTitle: review.title
+  //     }
+  //   })
+  //     return data
 
-  // console.log(userReviews);
+  // }
+
+  // console.log(combinedData())
+
   return (
     <div className='review-container'>
       <div className='review-info'>
-        {user.reviews ? (
-          user.reviews.map((review) => (
+      {games ? (
+          games.map((game)=>(
+            <>
+            <p>{game.title}</p>
+            <img src={game.image}/>
+            </>
+          ))
+        ) : <h3>No Games</h3>}
+        {reviews ? (
+          reviews.map((review) => (
             <div className='review'>
               <div className='review-text'>
                 <h2 className='review-title-rating'>
