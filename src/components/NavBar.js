@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { Menu, MenuItem } from "semantic-ui-react"
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
@@ -12,31 +13,22 @@ function NavBar({ user, setUser }) {
 
   return (
     <header className='header'>
-
-
       <div>
         {user ? (
-          <>
-            <span>
-              <Link to='/'>Home</Link>
-            </span>
-            <span>
-               <Link to='/games'>Games</Link>
-            </span>
-            <span>
-               <Link to='/reviews'>Reviews</Link>
-            </span>
-            <span>
-              <Link to='/myaccount'>My Account</Link>
-            </span>
-            <span>
+          <Menu fluid widths={4} size='massive'>
+              <MenuItem as={NavLink} to='/'>Home</MenuItem>
+               <MenuItem as={NavLink} to='/games'>Games</MenuItem>
+
+               <MenuItem as={NavLink} to='/reviews'>Reviews</MenuItem>
+
+              <MenuItem as={NavLink} to='/myaccount'>My Account</MenuItem>
+
               <button onClick={handleLogoutClick}>
                 <Link to="/login">
                 Logout
                 </Link>
                 </button>
-            </span>
-          </>
+          </Menu>
         ) : (
           <>
           </>
