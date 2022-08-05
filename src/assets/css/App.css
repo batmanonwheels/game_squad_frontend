@@ -167,3 +167,11 @@ body {
 .review-upvote-button {
   background-color: white;
 }
+
+.form-input {
+  margin-bottom: 8px;
+}
+
+button {
+  border-radius: 15px;
+}
