@@ -72,11 +72,11 @@ function App() {
             <Route path='/myaccount'>
               <AccountPage user={user} handleDelete={handleDelete} />
             </Route>
-            <Route path='/games'>
-              <GameList games={games} />
-            </Route>
             <Route path='/games/:id'>
               <GameInfo user={user} />
+            </Route>
+            <Route path='/games'>
+              <GameList games={games} />
             </Route>
             <Route path='/reviews'>
               <ReviewList

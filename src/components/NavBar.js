@@ -16,18 +16,18 @@ function NavBar({ user, setUser }) {
       <div>
         {user ? (
           <Menu fluid widths={4} size='massive'>
-              <MenuItem as={NavLink} to='/'>Home</MenuItem>
-               <MenuItem as={NavLink} to='/games'>Games</MenuItem>
+              <span><MenuItem as={NavLink} to='/' className="link">Home</MenuItem></span>
+              <span><MenuItem as={NavLink} to='/games' className="link">Games</MenuItem></span>
 
-               <MenuItem as={NavLink} to='/reviews'>Reviews</MenuItem>
+              <span><MenuItem as={NavLink} to='/reviews' className="link">Reviews</MenuItem></span>
 
-              <MenuItem as={NavLink} to='/myaccount'>My Account</MenuItem>
+              <span><MenuItem as={NavLink} to='/myaccount' className="link">My Account</MenuItem></span>
 
-              <button onClick={handleLogoutClick}>
-                <Link to="/login">
+              <span onClick={handleLogoutClick}>
+                <Link to="/login" className="link">
                 Logout
                 </Link>
-                </button>
+                </span>
           </Menu>
         ) : (
           <>

@@ -4,18 +4,6 @@ body {
   font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
-span {
-  text-decoration: none;
-  margin-top: 50px;
-  padding: 100px;
-  font-size: 40px;
-  
-}
-
-span:hover {
-  color: white;
-}
-
 .header {
   text-decoration: none;
   display: flex;
@@ -57,14 +45,14 @@ span:hover {
   border-style: ridge;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-  background-color: #f9f5eb;
+  background-color: white;
   /* cursor: pointer; */
   text-align: center;
   margin-right: 0;
   /* justify-content: center; */
 }
 .game-preview:hover {
-  transform: scale(1.25)
+  transform: scale(1.25);
 }
 
 .game-preview-image {
@@ -76,6 +64,7 @@ span:hover {
 .game-preview-title {
   justify-content: center;
   margin-top: 5px;
+  background-color: white;;
 }
 
 .game-info-image {
@@ -138,3 +127,12 @@ span:hover {
   /* margin-right: 100px; */
 }
 
+.link {
+  padding-inline: 100px;
+  font-size: 40px;
+}
+
+span:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}
