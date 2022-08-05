@@ -55,7 +55,7 @@ function App() {
       .then((data) => setUpdateState(data));
   };
 
-  console.log(reviews);
+  // console.log(reviews);
 
   return (
     <>

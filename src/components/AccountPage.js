@@ -1,12 +1,12 @@
 import React from 'react';
 import UserReviewList from './UserReviewList';
 
-function AccountPage({ user, games, handleDelete }) {
+function AccountPage({ user, handleDelete }) {
   return (
     <>
-      <h1>Welcome to your account, {user.username.toUpperCase()}!</h1>
+      <h1>Welcome, {user.first_name}!</h1>
       <h2>View your reviews here!</h2>
-      <UserReviewList user={user} games={games} handleDelete={handleDelete} />
+      <UserReviewList user={user} handleDelete={handleDelete} />
     </>
   );
 }
