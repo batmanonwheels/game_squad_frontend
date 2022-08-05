@@ -17,7 +17,7 @@ function Home({ user, games }) {
           alt={game.name}
           onDragStart={handleDragStart}
           role='presentation'
-          width='90%'
+          width='auto'
           height='600px'
         />
       </Link>

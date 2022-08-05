@@ -55,7 +55,7 @@ function ReviewPreview({
       /> */}
       <div className='review-text'>
         <h2 className='review-title-rating'>
-          {title} - {rating}
+          {title}: {rating}
         </h2>
         <h3 className='review-game-title'>{game.title}</h3>
         <p className='review-description'>{description}</p>

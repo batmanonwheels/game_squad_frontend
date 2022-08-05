@@ -28,6 +28,8 @@ function NavBar({ user, setUser }) {
             </span>
             <span>
               <Link to='/myaccount'>My Account</Link>
+            </span>
+            <span>
               <button onClick={handleLogoutClick}>
                 <Link to="/login">
                 Logout
